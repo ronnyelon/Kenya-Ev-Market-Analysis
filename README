@@ -1,0 +1,64 @@
+# ⚡ Kenya EV Market Analysis & Portfolio Project
+
+An end-to-end data analytics project exploring the electric vehicle (EV) transition, micro-mobility trends, charging infrastructure deficits, and grid load forecasting in Kenya up to 2030.
+
+## 📌 Project Overview
+Unlike Western EV transitions which are heavily driven by private passenger cars, East Africa's EV revolution is commercial, fast-paced, and anchored in micro-mobility. This project analyzes five distinct datasets to uncover the economic drivers, infrastructure bottlenecks, and future grid impacts of Kenya's rapidly growing e-mobility sector.
+
+### Key Objectives
+*   **Adoption Trends:** Track historical registration patterns (2018–2024) across vehicle classes.
+*   **Infrastructure Deficits:** Map operational charging/swapping networks to identify geographic supply gaps.
+*   **Unit Economics:** Compare real-world petrol costs against e-mobility electricity tariffs.
+*   **Grid Capacity Forecasting:** Model compounding EV growth and baseline power grid requirements up to 2030.
+*   **Hardware Benchmarking:** Evaluate battery performance and range efficiency ($km/kWh$) across manufacturers.
+
+---
+
+## 📊 Core Data Architecture & Insights
+
+The analysis is broken down into five core phases, utilizing the following structured datasets:
+
+### 1. Market Adoption Trend Analysis (`kenya_ev_adoption.csv`)
+* **Insight:** The market is highly asymmetrical. Motorcycles (*e-boda bodas*) represent **76.8%** of all cumulative EV registrations (68,623 units out of 89,301 total). 
+* **Growth:** Following a flat consolidation phase in 2023 (+2.6% YoY), the market experienced an **81.8% surge in 2024**, driven by commercial fleet rollouts and supportive national policies.
+
+### 2. Infrastructure Deficit Mapping (`kenya_charging_infra.csv`)
+* **Insight:** Industry players are optimizing infrastructure for high-frequency trading assets over standard passenger cars. **Battery Swap Stations (29 locations)** outnumber dedicated **DC Fast Chargers (23 locations)** across the network.
+* **The Bottleneck:** While Nairobi has the most sheer volume, **Nakuru** exhibits a critical infrastructure gap with an **EV-to-Station ratio of 731.9**, nearly double that of Nairobi (389.6).
+
+### 3. Energy & Fuel Unit Economics (`kenya_fuel_vs_ev_costs.csv`)
+* **Insight:** Shifting from standard internal combustion engines (ICE) to an electric powertrain results in an average **78.9% reduction in daily energy costs**. 
+* **The Bottom Line:** A standard daily commercial operator saves approximately **KES 791 per day**, translating to **KES 23,760 in monthly savings**—a massive boost to net margins.
+
+### 4. Macro Growth Forecasting to 2030 (`kenya_ev_forecast.csv`)
+* **Insight:** Modeling an aggressive technology S-curve puts the total projected EV fleet size at **50,971 units by 2030**.
+* **Grid Impact:** This fleet scaling will introduce an annual grid demand of **107,039.1 MWh**, requiring a network scaling target of **2,831 operational stations**.
+
+### 5. Hardware & Efficiency Benchmarking (`kenya_ev_specs.csv`)
+* **Insight:** Micro-mobility hardware yields exceptional utility. The *Ampersand E-Moto* and *Roam Air* deliver **28 to 30 km per kWh** of battery capacity, minimizing downtime via standard 3-to-4 minute battery swaps.
+* **Heavy Transit:** Passenger cars average 6.8 km/kWh, while heavy public transport buses (*BasiGo K6*) average 2.0 km/kWh but offer higher per-trip passenger carbon offsets.
+
+---
+
+## 🛠️ Repository Directory Structure
+
+```text
+├── data/
+│   ├── kenya_ev_adoption.csv              # Historical registration & county metrics
+│   ├── kenya_charging_infra.csv           # Fleet operator & charger location data
+│   ├── kenya_fuel_vs_ev_costs.csv         # Comparative monthly fuel price tracking
+│   ├── kenya_ev_forecast.csv              # Compounding market size projections (2025-2030)
+│   └── kenya_ev_specs.csv                 # Manufacturer specific hardware capabilities
+├── notebooks/
+│   ├── phase1_trends.py                   # Market penetration & YoY growth code
+│   ├── phase2_infrastructure.py           # County supply gap & ratio mapping code
+│   ├── phase3_costs.py                    # Cost-benefit analysis visualization code
+│   ├── phase4_forecasting.py              # Grid capacity & fleet modeling code
+│   └── phase5_specs.py                    # Efficiency performance scatter benchmarking
+├── visualizations/
+│   ├── kenya_ev_adoption_trends.png       # Stacked area chart of market growth
+│   ├── kenya_ev_infrastructure_analysis.png # Side-by-side infrastructure deficits
+│   ├── kenya_ev_cost_benefit_analysis.png # Cost deltas with annotation highlights
+│   ├── kenya_ev_2030_forecast.png         # Dual-axis growth and energy grid demand chart
+│   └── kenya_ev_specs_benchmarking.png    # Battery capacity vs range scatter mapping
+└── README.md                              # Portfolio presentation & brief
